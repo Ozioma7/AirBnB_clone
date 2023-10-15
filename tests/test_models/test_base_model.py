@@ -52,3 +52,16 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(type(d_json['id']), "<class 'str'>")
         self.assertTrue(type(d_json['created_at']), "<class 'str'>")
         self.assertTrue(d_json['__class__'], "BaseModel")
+
+    def test_str(self):
+        """
+        Testing string representation of class
+        """
+        bm = BaseModel()
+        s_bm = str(bm)
+        self.assertTrue((s_bm.split(" ")[0]), "[BaseModel]")
+        self.assertTrue(s_bm.split(" ")[1] == "({})".format(bm.id))
+
+
+if __name__ == '__main__':
+    unittest.main()
