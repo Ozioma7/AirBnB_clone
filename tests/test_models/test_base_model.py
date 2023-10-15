@@ -62,6 +62,11 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue((s_bm.split(" ")[0]), "[BaseModel]")
         self.assertTrue(s_bm.split(" ")[1] == "({})".format(bm.id))
 
-
-if __name__ == '__main__':
-    unittest.main()
+    def test_kwargs(self):
+        """
+        Testing **kwargs arguments
+        for the constructor of a BaseModel
+        """
+        bm1 = BaseModel()
+        bm2 = BaseModel(**bm1.to_dict())
+        self.assertTrue(bm1.id == bm2.id)
