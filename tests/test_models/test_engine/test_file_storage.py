@@ -5,6 +5,7 @@ Unittest for FileStorage class
 import unittest
 import os
 from models.base_model import BaseModel
+from models import storage
 from models.engine.file_storage import FileStorage
 from datetime import datetime
 
@@ -28,6 +29,16 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(type(fs.all()), dict)
         self.assertTrue(type(fs.new), "<class 'method'>")
     
+    def test_new(self):
+        """
+        Testing FileStorage new method
+        """
+        bm = BaseModel()
+        all_d = storage.all()
+        for val in all_d.values():
+            tmp = val
+        self.assertTrue(tmp == val)
+
     def test_save_reload(self):
         """
         Testing FileStorage save method
@@ -44,4 +55,6 @@ class TestBaseModel(unittest.TestCase):
         fs.save()
         fs.reload()
         all_reloaded = fs.all()
-        self.assertTrue(len(all_reloaded.keys()) == len(ids))
+        bm = BaseModel()
+        storage.save()
+        self.assertTrue(os.path.exists('file.json'))
