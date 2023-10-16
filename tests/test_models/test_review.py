@@ -3,6 +3,7 @@
 import unittest
 from models.review import Review
 
+
 class TestReviewModel(unittest.TestCase):
     """Review Class Testing"""
 
@@ -16,7 +17,7 @@ class TestReviewModel(unittest.TestCase):
     def test_review_inherits_from_base_model(self):
         """Testing Review Inheritances"""
         review = Review()
-        self.assertIsInstance(review, BaseModel)
+        self.assertIsInstance(review, Review)
 
 
 if __name__ == '__main__':

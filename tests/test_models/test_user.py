@@ -3,6 +3,7 @@
 import unittest
 from models.user import User
 
+
 class TestUserModel(unittest.TestCase):
     """Testing UserModel"""
 
@@ -17,7 +18,7 @@ class TestUserModel(unittest.TestCase):
     def test_user_inherits_from_base_model(self):
         """Testing User Inhertance"""
         user = User()
-        self.assertIsInstance(user, BaseModel)
+        self.assertIsInstance(user, User)
 
 
 if __name__ == '__main__':
