@@ -38,10 +38,18 @@ class FileStorage:
     def reload(self):
         """deserializes the JSON file to __objects"""
         from models.base_model import BaseModel
+        from models.user import User
+        from models.place import Place
+        from models.state import State
+        from models.city import City
+        from models.amenity import Amenity
+        from models.review import Review
         try:
             with open(type(self).__file_path, "r", encoding="utf-8") as read_f:
                 json_dict = json.load(read_f)
             for key, value in json_dict.items():
-                type(self).__objects[key] = BaseModel(**value)
+                cls_nme, ident = key.split(".")
+                class_name = eval(cls_nme)
+                type(self).__objects[key] = class_name(**value)
         except FileNotFoundError:
             return
