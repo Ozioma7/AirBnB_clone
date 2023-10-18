@@ -177,6 +177,7 @@ class HBNBCommand(cmd.Cmd):
             return
         creating = class_create(words_list[0])
         if type(creating) is str:
+            A
             print(creating)
         else:
             if len(words_list) == 1:
@@ -192,6 +193,7 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     if words_list[3][0] != '"':
                         words_list[3] = eval(words_list[3])
+                    B
                     if len(words_list) == 5:
                         if words_list[3][0] == '"':
                             if words_list[4][-1] == '"':
