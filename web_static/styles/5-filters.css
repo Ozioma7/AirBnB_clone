@@ -11,14 +11,14 @@
   width: 25%;
   border-right: 1px solid #DDDDDD;
   display: inline-block;
-  margin-left: 40px;
+  margin-left: 50px;
 }
 
 .amenities {
   height: 100%;
   width: 25%;
   display: inline-block;
-  margin-left: 40px;
+  margin-left: 50px;
 }
 
 h3 {
@@ -29,7 +29,7 @@ h3 {
 h4 {
   font-weight: 400;
   font-size: 14px;
-  margin-top: -12px;
+  margin-top: 5px;
 }
 button {
   font-size: 18px;
